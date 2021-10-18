@@ -1,10 +1,10 @@
-on:
 jobs:
-  steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-java@v2
-      with:
-        java-version: '11'
-        distribution: 'adopt'
-    - name: Run the Maven verify phase
-      run: mvn --batch-mode --update-snapshots verify
+  - job: Tests
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-java@v2
+        with:
+          java-version: '11'
+          distribution: 'adopt'
+      - name: Run the Maven verify phase
+        run: mvn --batch-mode --update-snapshots verify
