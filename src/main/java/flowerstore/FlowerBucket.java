@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Getter @Setter @ToString
-public class FlowerBucket {
+public class FlowerBucket extends Item {
     List<FlowerPack> flowerPacks = new ArrayList<>();
 
     public void addPack(FlowerPack flowerPack) {
@@ -21,5 +21,10 @@ public class FlowerBucket {
             sum += pack.getPrice();
         }
         return sum;
+    }
+
+    @Override
+    public String getDescription() {
+        return this.toString();
     }
 }
